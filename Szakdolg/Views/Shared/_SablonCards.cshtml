@@ -1,0 +1,19 @@
+﻿@model Szakdolg.Models.Sablonok
+<p>kurva</p>
+<div class="col-sm-4">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="~/Content/Img/@(Model.Img)" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Megnevezes</h5>
+
+                    <p class="card-text" style="float:right;display:block">Ára: @Model.Ar ft</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
