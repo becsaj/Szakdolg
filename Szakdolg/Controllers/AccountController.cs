@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Szakdolg.Models;
@@ -18,8 +19,9 @@ namespace Szakdolg.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public AccountController()
+        public AccountController() 
         {
+            
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -147,14 +149,28 @@ namespace Szakdolg.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    Keresztnev = model.Email,
+                    Vezeteknev = model.Email,
+                    Datum = model.Datum,
+                    UserName = model.Email,
+                    Email = model.Email,
+
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var rs = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    var rm = new RoleManager<IdentityRole>(rs);
+                    await rm.CreateAsync(new IdentityRole("Admin"));
+                    await UserManager.AddToRoleAsync(user.Id, "Admin");
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

@@ -187,11 +187,21 @@
     <Compile Include="Migrations\202001131055237_addMunka.Designer.cs">
       <DependentUpon>202001131055237_addMunka.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001141446126_AddRegister.cs" />
+    <Compile Include="Migrations\202001141446126_AddRegister.Designer.cs">
+      <DependentUpon>202001141446126_AddRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001141630219_Roles.cs" />
+    <Compile Include="Migrations\202001141630219_Roles.Designer.cs">
+      <DependentUpon>202001141630219_Roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Min16Ev.cs" />
     <Compile Include="Models\Munka.cs" />
+    <Compile Include="Models\RoleNevek.cs" />
     <Compile Include="Models\Sablonok.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -280,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Ugyfelek\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -299,6 +310,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001131055237_addMunka.resx">
       <DependentUpon>202001131055237_addMunka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001141446126_AddRegister.resx">
+      <DependentUpon>202001141446126_AddRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001141630219_Roles.resx">
+      <DependentUpon>202001141630219_Roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
