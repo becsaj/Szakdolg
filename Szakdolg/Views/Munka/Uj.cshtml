@@ -1,0 +1,41 @@
+﻿@model Szakdolg.Models.MunkaModel
+@{
+    ViewBag.Title = "Új munka";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Új munka</h2>
+<br />
+
+@using (Html.BeginForm("Uj", "Munka", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Munkaim.Nev)
+        @Html.TextBoxFor(m => m.Munkaim.Nev, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Munkaim.Nev)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Munkaim.Elkeszult)
+        @Html.TextBoxFor(m => m.Munkaim.Elkeszult, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Munkaim.Elkeszult)
+    </div>
+    if (Request.Url.ToString().Contains("/Uj"))
+    {
+        <div class="form-group">
+
+            <input type="file" name="postedFile" />
+        </div>
+    }
+
+    @Html.HiddenFor(m => m.Munkaim.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Feltöltés</button>
+}
+<span>@ViewBag.UploadError </span>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

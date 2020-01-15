@@ -1,5 +1,5 @@
 ﻿@model Szakdolg.Models.Sablonok
-<p>kurva</p>
+
 <div class="col-sm-4">
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
@@ -11,7 +11,12 @@
                     <h5 class="card-title">@Model.Megnevezes</h5>
 
                     <p class="card-text" style="float:right;display:block">Ára: @Model.Ar ft</p>
-
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <br />
+                        <span>@Html.ActionLink("Modositas", "Modositas", "Sablon", new { id = Model.Id }, new { @class = "btn btn-dark" })</span>
+                        <span onclick="return confirm('Törlöd?')">@Html.ActionLink("Delete", "Delete", "Sablon", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+                    }
                 </div>
             </div>
         </div>

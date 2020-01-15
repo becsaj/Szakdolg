@@ -1,0 +1,42 @@
+﻿@model Szakdolg.Models.SablonModel
+@{
+    ViewBag.Title = "Új Sablon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Új sablon</h2>
+<br />
+
+@using (Html.BeginForm("Uj", "Sablon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sablonok.Megnevezes)
+        @Html.TextBoxFor(m => m.Sablonok.Megnevezes, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Sablonok.Megnevezes)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sablonok.Ar)
+        @Html.TextBoxFor(m => m.Sablonok.Ar, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Sablonok.Ar)
+    </div>
+
+    if (Request.Url.ToString().Contains("/Uj"))
+    {
+        <div class="form-group">
+
+            <input type="file" name="postedFile" />
+        </div>
+    }
+
+    @Html.HiddenFor(m => m.Sablonok.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Feltöltés</button>
+}
+<span>@ViewBag.UploadError </span>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

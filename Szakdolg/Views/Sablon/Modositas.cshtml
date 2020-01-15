@@ -1,0 +1,40 @@
+﻿@model Szakdolg.Models.SablonModel
+@{
+    ViewBag.Title = "Modositas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Módosítás</h2>
+<br />
+
+@using (Html.BeginForm("Mentes", "Sablon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sablonok.Megnevezes)
+        @Html.TextBoxFor(m => m.Sablonok.Megnevezes, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Sablonok.Megnevezes)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sablonok.Ar)
+        @Html.TextBoxFor(m => m.Sablonok.Ar, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Sablonok.Ar)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sablonok.Img)
+        @Html.TextBoxFor(m => m.Sablonok.Img, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Sablonok.Img)
+    </div>
+
+
+    @Html.HiddenFor(m => m.Sablonok.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Mentés</button>
+}
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

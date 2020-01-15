@@ -12,6 +12,12 @@
 
                     <p class="card-text" style="float:right;display:block">Elkészült: @Model.Elkeszult.ToShortDateString()</p>
 
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <br />
+                        <span>@Html.ActionLink("Modositas", "Modositas", "Munka", new { id = Model.Id }, new { @class = "btn btn-dark" })</span>
+                        <span onclick="return confirm('Törlöd?')">@Html.ActionLink("Delete", "Delete", "Munka", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+                    }
                 </div>
             </div>
         </div>

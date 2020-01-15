@@ -11,5 +11,6 @@ namespace Szakdolg.Models
         public string Megnevezes { get; set; }
         public string Img { get; set; }
         public int Ar { get; set; }
+
     }
 }
