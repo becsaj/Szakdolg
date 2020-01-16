@@ -1,0 +1,21 @@
+﻿@model Szakdolg.Models.FeedBack
+@if (Model.Engedelyezett)
+{
+    <div class="col-md-auto">
+        <div class="card" style="width:auto;height:auto;margin-top:20px;">
+            <div class="card-header" style="font-weight:bold;font-style:italic;background: linear-gradient(to right, #0ABF04, #0BD904);">
+                <h4 style="font-weight:bold;">@Model.Nev</h4>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>@Model.Velemeny</p>
+                    <footer class="blockquote-footer">@Model.Datum.ToShortDateString() </footer>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <span onclick="return confirm('Törlöd?')" style="float:right;">@Html.ActionLink("Delete", "Delete", "Feedback", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+                    }
+                </blockquote>
+            </div>
+        </div>
+    </div>
+}

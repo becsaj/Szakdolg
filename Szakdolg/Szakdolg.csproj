@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MunkaController.cs" />
@@ -197,8 +198,14 @@
     <Compile Include="Migrations\202001141630219_Roles.Designer.cs">
       <DependentUpon>202001141630219_Roles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001161516235_AddFeedBack.cs" />
+    <Compile Include="Migrations\202001161516235_AddFeedBack.Designer.cs">
+      <DependentUpon>202001161516235_AddFeedBack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FeedBack.cs" />
+    <Compile Include="Models\FeedBackModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Min16Ev.cs" />
@@ -390,6 +397,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\FeedBack\Index.cshtml" />
+    <Content Include="Views\Shared\_FeedBack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -414,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001141630219_Roles.resx">
       <DependentUpon>202001141630219_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001161516235_AddFeedBack.resx">
+      <DependentUpon>202001161516235_AddFeedBack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

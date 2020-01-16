@@ -28,6 +28,8 @@ namespace Szakdolg.Models
 
         public DbSet<Sablonok> Sablonok { get; set; }
 
+        public DbSet<FeedBack> FeedBack { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

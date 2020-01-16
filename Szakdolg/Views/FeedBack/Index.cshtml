@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Szakdolg.Models.FeedBack>
+@{
+    ViewBag.Title = "FeedBack";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<h2 class="=text-center">Értekeld!</h2>
+<a href="Feedback/New" class="btn_contact" style="width:50%"><span>Rate my work!</span></a>
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var f in Model)
+        {
+            @Html.Partial("_FeedBack", f)
+        }
+
+    </div>
+</div>

@@ -30,6 +30,7 @@ namespace Szakdolg.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Mentes(Munka munkaim)
         {
+
             if (munkaim.Id == null || munkaim.Id == 0)
             {
                 _context.Munkaim.Add(munkaim);
@@ -82,6 +83,7 @@ namespace Szakdolg.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index", "Munka");
             }
+            
             return View("Index");
         }
     }
