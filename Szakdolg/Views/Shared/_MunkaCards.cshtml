@@ -15,8 +15,8 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <br />
-                        <span>@Html.ActionLink("Modositas", "Modositas", "Munka", new { id = Model.Id }, new { @class = "btn btn-dark" })</span>
-                        <span onclick="return confirm('Törlöd?')">@Html.ActionLink("Delete", "Delete", "Munka", new { id = Model.Id }, new { @class = "btn btn-danger" })</span>
+                        <span>@Html.ActionLink("Módositás", "Modositas", "Munka", new { id = Model.Id }, new { @class = "btn btn-outline-dark" })</span>
+                        <span onclick="return confirm('Törlöd?')">@Html.ActionLink("Törlés", "Delete", "Munka", new { id = Model.Id }, new { @class = "btn btn-outline-danger" })</span>
                     }
                 </div>
             </div>

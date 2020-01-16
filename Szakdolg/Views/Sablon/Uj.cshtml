@@ -7,9 +7,8 @@
 <h2>Új sablon</h2>
 <br />
 
-@using (Html.BeginForm("Uj", "Sablon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("UjMentes", "Sablon", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-
 
     <div class="form-group">
         @Html.LabelFor(m => m.Sablonok.Megnevezes)
@@ -32,7 +31,7 @@
 
     @Html.HiddenFor(m => m.Sablonok.Id)
     @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Feltöltés</button>
+    <button type="submit" class="btn btn-outline-success">Feltöltés</button>
 }
 <span>@ViewBag.UploadError </span>
 

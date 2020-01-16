@@ -7,7 +7,7 @@
 <h2>Új munka</h2>
 <br />
 
-@using (Html.BeginForm("Uj", "Munka", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("UjMentes", "Munka", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
 
@@ -28,10 +28,10 @@
             <input type="file" name="postedFile" />
         </div>
     }
-
     @Html.HiddenFor(m => m.Munkaim.Id)
     @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-primary">Feltöltés</button>
+
+    <button type="submit" class="btn btn-outline-success">Feltöltés</button>
 }
 <span>@ViewBag.UploadError </span>
 

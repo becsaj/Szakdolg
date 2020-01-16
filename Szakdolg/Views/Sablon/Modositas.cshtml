@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Módosítás</h2>
+<h1>Módosítás</h1>
 <br />
 
 @using (Html.BeginForm("Mentes", "Sablon", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -20,11 +20,6 @@
         @Html.LabelFor(m => m.Sablonok.Ar)
         @Html.TextBoxFor(m => m.Sablonok.Ar, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Sablonok.Ar)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Sablonok.Img)
-        @Html.TextBoxFor(m => m.Sablonok.Img, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Sablonok.Img)
     </div>
 
 

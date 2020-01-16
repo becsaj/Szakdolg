@@ -90,7 +90,7 @@ namespace Szakdolg.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Jelszó még1x:")]
+        [Display(Name = "Jelszó újra:")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 

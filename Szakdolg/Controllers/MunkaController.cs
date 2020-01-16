@@ -30,16 +30,6 @@ namespace Szakdolg.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Mentes(Munka munkaim)
         {
-            if (!ModelState.IsValid)
-            {
-                var vm = new MunkaModel
-                {
-                    Munkaim = munkaim
-                };
-
-                return View("Modositas", vm);
-            }
-
             if (munkaim.Id == null || munkaim.Id == 0)
             {
                 _context.Munkaim.Add(munkaim);
@@ -58,6 +48,7 @@ namespace Szakdolg.Controllers
         public ActionResult Modositas(int id)
         {
             var munka = _context.Munkaim.SingleOrDefault(u => u.Id == id);
+
             if (munka == null) return HttpNotFound();
             var vm = new MunkaModel()
             {
@@ -87,14 +78,6 @@ namespace Szakdolg.Controllers
                 string _path = Path.Combine(Server.MapPath("~/Content/Img"), _FileName);
                 postedFile.SaveAs(_path);
                 munkaim.Img = _FileName;
-                if (!ModelState.IsValid)
-                {
-                    var vm = new MunkaModel
-                    {
-                        Munkaim = munkaim
-                    };
-                    return View("Uj", vm);
-                }
                 _context.Munkaim.Add(munkaim);
                 _context.SaveChanges();
                 return RedirectToAction("Index", "Munka");

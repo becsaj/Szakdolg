@@ -9,6 +9,7 @@ using Szakdolg.Models;
 namespace Szakdolg.Controllers
 {
     [Authorize(Roles = "Admin")]
+    [AllowAnonymous]
     public class SablonController : Controller
     {
         
@@ -19,7 +20,7 @@ namespace Szakdolg.Controllers
         {
             _context.Dispose();
         }
-        // GET: Sablon
+
         public ActionResult Index()
         {
             var sabl = _context.Sablonok.ToList();
@@ -29,16 +30,6 @@ namespace Szakdolg.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Mentes(Sablonok sablonok)
         {
-            if (!ModelState.IsValid)
-            {
-                var vm = new SablonModel
-                {
-                    Sablonok = sablonok
-                };
-
-                return View("Modositas", vm);
-            }
-
             if (sablonok.Id == null || sablonok.Id == 0)
             {
                 _context.Sablonok.Add(sablonok);
@@ -80,20 +71,14 @@ namespace Szakdolg.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UjMentes(HttpPostedFileBase postedFile, Sablonok sablonok)
         {
+            
             if (postedFile.ContentLength > 0)
             {
                 string _FileName = Path.GetFileName(postedFile.FileName);
                 string _path = Path.Combine(Server.MapPath("~/Content/Img"), _FileName);
                 postedFile.SaveAs(_path);
                 sablonok.Img = _FileName;
-                if (!ModelState.IsValid)
-                {
-                    var vm = new SablonModel
-                    {
-                        Sablonok = sablonok
-                    };
-                    return View("Uj", vm);
-                }
+              
                 _context.Sablonok.Add(sablonok);
                 _context.SaveChanges();
                 return RedirectToAction("Index", "Sablon");
