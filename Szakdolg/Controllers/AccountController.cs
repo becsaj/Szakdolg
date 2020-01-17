@@ -168,8 +168,8 @@ namespace Szakdolg.Controllers
                 {
                     var rs = new RoleStore<IdentityRole>(new ApplicationDbContext());
                     var rm = new RoleManager<IdentityRole>(rs);
-                    await rm.CreateAsync(new IdentityRole("Admin"));
-                    await UserManager.AddToRoleAsync(user.Id, "Admin");
+                    await rm.CreateAsync(new IdentityRole(RoleNevek.Felhasznalo));
+                    await UserManager.AddToRoleAsync(user.Id, RoleNevek.Felhasznalo);
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
