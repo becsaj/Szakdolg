@@ -1,0 +1,26 @@
+﻿@model Szakdolg.Models.FeedBackModel
+@{
+    ViewBag.Title = "Új visszajelzés";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Új visszajelzés</h2>
+
+@using (Html.BeginForm("Mentes", "FeedBack", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FeedBack.Nev)
+        @Html.TextBoxFor(m => m.FeedBack.Nev, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FeedBack.Nev)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FeedBack.Velemeny)
+        @Html.TextAreaFor(m => m.FeedBack.Velemeny, new { @class = "form-control", @rows = "5" })
+        @Html.ValidationMessageFor(m => m.FeedBack.Velemeny)
+    </div>
+    @Html.HiddenFor(m => m.FeedBack.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-outline-dark">Küldés</button>
+}

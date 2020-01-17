@@ -172,8 +172,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IntezoFeedBackController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MunkaController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\SablonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,6 +204,10 @@
     <Compile Include="Migrations\202001161516235_AddFeedBack.Designer.cs">
       <DependentUpon>202001161516235_AddFeedBack.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001170852464_FeedBackLatt.cs" />
+    <Compile Include="Migrations\202001170852464_FeedBackLatt.Designer.cs">
+      <DependentUpon>202001170852464_FeedBackLatt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FeedBack.cs" />
@@ -228,6 +234,7 @@
     <Content Include="Content\Img\avatar.png" />
     <Content Include="Content\Img\home.png" />
     <Content Include="Content\Img\mail.png" />
+    <Content Include="Content\Img\notification.png" />
     <Content Include="Content\Img\sablon1.png" />
     <Content Include="Content\Img\sablon2.png" />
     <Content Include="Content\Img\sablon3.png" />
@@ -399,6 +406,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\FeedBack\Index.cshtml" />
     <Content Include="Views\Shared\_FeedBack.cshtml" />
+    <Content Include="Views\FeedBack\Uj.cshtml" />
+    <Content Include="Views\IntezoFeedBack\Index.cshtml" />
+    <Content Include="Views\Shared\_IntezoFeedBack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -426,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001161516235_AddFeedBack.resx">
       <DependentUpon>202001161516235_AddFeedBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001170852464_FeedBackLatt.resx">
+      <DependentUpon>202001170852464_FeedBackLatt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

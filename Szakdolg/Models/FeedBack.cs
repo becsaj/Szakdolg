@@ -13,6 +13,6 @@ namespace Szakdolg.Models
         public string Velemeny { get; set; }
         public DateTime Datum { get; set; }
         public bool Engedelyezett { get; set; }
-
+        public bool Lattamozott { get; set; }
     }
 }

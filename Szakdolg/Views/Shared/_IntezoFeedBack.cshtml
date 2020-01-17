@@ -1,5 +1,5 @@
 ﻿@model Szakdolg.Models.FeedBack
-@if (Model.Engedelyezett)
+@if (!Model.Engedelyezett) 
 {
     <div class="col-md-auto">
         <div class="card" style="width:auto;height:auto;margin-top:20px;">
@@ -12,10 +12,12 @@
                     <footer class="blockquote-footer">@Model.Datum.ToShortDateString() </footer>
                     @if (User.IsInRole("Admin"))
                     {
-                        <span onclick="return confirm('Törlöd?')" style="float:right;">@Html.ActionLink("Torles", "Torles", "FeedBack", new { id = Model.Id }, new { @class = "btn btn-outline-danger" })</span>
+                        <span onclick="return confirm('Törlöd?')" style="float:right;">@Html.ActionLink("Torles", "Torles", "IntezoFeedBack", new { id = Model.Id }, new { @class = "btn btn-outline-danger" })</span>
+                        <span style="float:right;margin-right:20px;">@Html.ActionLink("Engedelyez", "Engedelyez", "IntezoFeedBack", new { id = Model.Id }, new { @class = "btn btn-outline-success" })</span>
                     }
                 </blockquote>
             </div>
         </div>
     </div>
 }
+

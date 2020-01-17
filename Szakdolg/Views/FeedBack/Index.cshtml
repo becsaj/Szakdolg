@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Szakdolg.Models.FeedBack>
 @{
-    ViewBag.Title = "FeedBack";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <br />
-<h2 class="=text-center">Értekeld!</h2>
-<a href="Feedback/New" class="btn_contact" style="width:50%"><span>Rate my work!</span></a>
+<h2 class="text-center">Visszajelzések munkásságomról.</h2>
+<a href="FeedBack/Uj" class="btn_contact" style="width:50%"><span>Itt tudsz értékelni!</span></a>
 <div class="container-fluid">
     <div class="row">
         @foreach (var f in Model)

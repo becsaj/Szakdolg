@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Szakdolg.Models.FeedBack>
+@{
+    ViewBag.Title = "Visszajelzések";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Értékelések</h2>
+
+<div class="container-fluid">
+    @foreach (var f in Model)
+    {
+        @Html.Partial("_IntezoFeedBack", f)
+    }
+</div>
