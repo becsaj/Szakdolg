@@ -173,6 +173,7 @@
     <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntezoFeedBackController.cs" />
+    <Compile Include="Controllers\KonzulController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MunkaController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
@@ -208,11 +209,16 @@
     <Compile Include="Migrations\202001170852464_FeedBackLatt.Designer.cs">
       <DependentUpon>202001170852464_FeedBackLatt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001211606427_Konzul.cs" />
+    <Compile Include="Migrations\202001211606427_Konzul.Designer.cs">
+      <DependentUpon>202001211606427_Konzul.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FeedBack.cs" />
     <Compile Include="Models\FeedBackModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Konzul.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Min16Ev.cs" />
     <Compile Include="Models\Munka.cs" />
@@ -232,6 +238,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Img\arni.png" />
     <Content Include="Content\Img\avatar.png" />
+    <Content Include="Content\Img\calendar.png" />
     <Content Include="Content\Img\home.png" />
     <Content Include="Content\Img\mail.png" />
     <Content Include="Content\Img\notification.png" />
@@ -412,6 +419,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Konzul\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -439,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001170852464_FeedBackLatt.resx">
       <DependentUpon>202001170852464_FeedBackLatt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001211606427_Konzul.resx">
+      <DependentUpon>202001211606427_Konzul.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

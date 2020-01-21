@@ -30,6 +30,8 @@ namespace Szakdolg.Models
 
         public DbSet<FeedBack> FeedBack { get; set; }
 
+        public DbSet<Konzul> Konzul { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
