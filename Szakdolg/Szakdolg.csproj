@@ -173,6 +173,7 @@
     <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IntezoFeedBackController.cs" />
+    <Compile Include="Controllers\IntezoKonzulController.cs" />
     <Compile Include="Controllers\KonzulController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MunkaController.cs" />
@@ -213,12 +214,21 @@
     <Compile Include="Migrations\202001211606427_Konzul.Designer.cs">
       <DependentUpon>202001211606427_Konzul.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001221539012_addKonzulLattam.cs" />
+    <Compile Include="Migrations\202001221539012_addKonzulLattam.Designer.cs">
+      <DependentUpon>202001221539012_addKonzulLattam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221542515_addKonzulValasz.cs" />
+    <Compile Include="Migrations\202001221542515_addKonzulValasz.Designer.cs">
+      <DependentUpon>202001221542515_addKonzulValasz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FeedBack.cs" />
     <Compile Include="Models\FeedBackModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Konzul.cs" />
+    <Compile Include="Models\KonzulModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Min16Ev.cs" />
     <Compile Include="Models\Munka.cs" />
@@ -416,10 +426,13 @@
     <Content Include="Views\FeedBack\Uj.cshtml" />
     <Content Include="Views\IntezoFeedBack\Index.cshtml" />
     <Content Include="Views\Shared\_IntezoFeedBack.cshtml" />
+    <Content Include="Views\IntezoKonzul\Index.cshtml" />
+    <Content Include="Views\Shared\_Konzul.cshtml" />
+    <Content Include="Views\Konzul\Uj.cshtml" />
+    <Content Include="Views\Konzul\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Konzul\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -450,6 +463,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001211606427_Konzul.resx">
       <DependentUpon>202001211606427_Konzul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221539012_addKonzulLattam.resx">
+      <DependentUpon>202001221539012_addKonzulLattam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221542515_addKonzulValasz.resx">
+      <DependentUpon>202001221542515_addKonzulValasz.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

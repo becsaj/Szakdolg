@@ -18,5 +18,11 @@ namespace Szakdolg.Controllers
 
             return Content(lattamazott.ToString());
         }
+        public ActionResult Konzul()
+        {
+            var lattamazott = _context.Konzul.Where((u => u.Lattamozott == false)).Count();
+
+            return Content(lattamazott.ToString());
+        }
     }
 }

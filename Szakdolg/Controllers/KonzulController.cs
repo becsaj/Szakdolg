@@ -16,7 +16,7 @@ namespace Szakdolg.Controllers
 
         public ActionResult Index()
         {
-            var konzul = _context.FeedBack.ToList().OrderByDescending(f => f.Id);
+            var konzul = _context.Konzul.ToList().OrderByDescending(f => f.Id);
             return View(konzul);
         }
         public ActionResult Uj()
@@ -31,7 +31,7 @@ namespace Szakdolg.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var vm = new FeedBackModel
+                var vm = new KonzulModel
                 {
                     Konzul = konzul
                 };
@@ -40,19 +40,19 @@ namespace Szakdolg.Controllers
 
             if (konzul.Id == null || konzul.Id == 0)
             {
-                if (konzul.Nev == null) 
-                konzul.Nev = "Anonymus";
                 konzul.Datum = DateTime.Now;
+                konzul.Valasz = false;
+                konzul.Lattamozott = false;
                 _context.Konzul.Add(konzul);
             }
             _context.SaveChanges();
-            return RedirectToAction("Index", "FeedBack");
+            return RedirectToAction("Index", "Konzul");
         }
         public ActionResult Torles(int id)
         {
-            var feedback = _context.FeedBack.Find(id);
-            if (feedback == null) return HttpNotFound();
-            _context.FeedBack.Remove(feedback);
+            var konzul = _context.Konzul.Find(id);
+            if (konzul == null) return HttpNotFound();
+            _context.Konzul.Remove(konzul);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

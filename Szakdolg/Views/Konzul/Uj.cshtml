@@ -1,0 +1,32 @@
+﻿@model Szakdolg.Models.KonzulModel
+@{
+    ViewBag.Title = "Konzultáció kérése:";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Konzultáció kérés</h2>
+
+@using (Html.BeginForm("Mentes", "Konzul", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Konzul.Nev)
+        @Html.TextBoxFor(m => m.Konzul.Nev, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Konzul.Nev)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Konzul.Szoveg)
+        @Html.TextAreaFor(m => m.Konzul.Szoveg, new { @class = "form-control", @rows = "5" })
+        @Html.ValidationMessageFor(m => m.Konzul.Szoveg)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Konzul.Ecim)
+        @Html.TextBoxFor(m => m.Konzul.Ecim, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Konzul.Ecim)
+    </div>
+
+    @Html.HiddenFor(m => m.Konzul.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-outline-dark">Küldés</button>
+}

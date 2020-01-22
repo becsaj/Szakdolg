@@ -7,26 +7,29 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" } ))
     {
         @Html.AntiForgeryToken()
-        <ul class="nav navbar-nav navbar-right">
-            @if (User.IsInRole("Admin"))
-            {
-                <li>
-                    <a class="nav-link badge-notification" data-badge="@Html.Action("FeedBack", "Notification")" href="/IntezoFeedBack"><img src="@Url.Content($"~/Content/Img/notification.png")" style="width:24px"></a>
-                </li>
-            }
-
+    <ul class="nav navbar-nav navbar-right">
+        @if (User.IsInRole("Admin"))
+        {
             <li>
-                @Html.ActionLink("Üdv: " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" , @class="nav-link" })
+                <a class="nav-link badge-notification" data-badge="@Html.Action("FeedBack", "Notification")" href="/IntezoFeedBack"><img src="@Url.Content($"~/Content/Img/notification.png")" style="width:24px"></a>
             </li>
+            <li>
+                <a class="nav-link badge-notification" data-badge="@Html.Action("Konzul", "Notification")" href="/IntezoKonzul"><img src="@Url.Content($"~/Content/Img/calendar.png")" style="width:24px"></a>
+            </li>
+        }
 
-            <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Kijelentkezés</a></li>
-        </ul>
+        <li>
+            @Html.ActionLink("Üdv: " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link" })
+        </li>
+
+        <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Kijelentkezés</a></li>
+    </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class="nav-link" })</li>
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class="nav-link" })</li>*@
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link" })</li>
     </ul>
 }
