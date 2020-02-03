@@ -4242,9 +4242,10 @@ input[type="button"].btn-block {
   padding: 0.5rem 1rem;
 }
 
-.nav-link:hover, .nav-link:focus {
-  text-decoration: none;
-}
+    .nav-link:hover, .nav-link:focus {
+        text-decoration: none;
+        color: #A60311;
+    }
 
 .nav-link.disabled {
   color: #6c757d;
@@ -4727,17 +4728,17 @@ input[type="button"].btn-block {
 }
 
 .card {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #262626;
+    background-clip: border-box;
+    border: 0px solid #73020C;
+    border-radius: 0.25rem;
 }
 
 .card > hr {

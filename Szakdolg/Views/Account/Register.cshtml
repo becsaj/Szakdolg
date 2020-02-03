@@ -3,88 +3,102 @@
     ViewBag.Title = "Regisztráció";
 }
 
-    
-    <br />
-    <div class="row justify-content-center align-items-center">
-        <div class="card">
-            <br />
-            <img width="128" height="auto" class="card-img-top mx-auto d-block" src="~/Content/Img/avatar.png" alt="Card image cap">
-            <div class="card-body">
 
-                <hr />
+<br />
+<div class="row justify-content-center align-items-center">
+    <div class="card">
+        <br />
+        <img width="128" height="auto" class="card-img-top mx-auto d-block" src="~/Content/Img/register.png" alt="Card image cap">
+        <div class="card-body">
 
-                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    <div class="text-center">
-                        <h4>Új fiók létrehozása.</h4>
-                    </div>
-                    <br />
+            <hr />
+
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="text-center">
+                    <h4>Új fiók létrehozása.</h4>
+                </div>
+                <br />
 
 
-                    <div class="form-row">
-                        <div class="col">
+                <div class="form-row">
+                    <div class="col">
 
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Vezeteknev, new { @class = "col-md-12 control-label" })
-                                <div class="col-md-12">
-                                    @Html.TextBoxFor(m => m.Vezeteknev, new { @class = "form-control" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Email, new { @class = "col-md-12 control-label" })
-                                <div class="col-md-12">
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Password, new { @class = "col-md-12 control-label" })
-                                <div class="col-md-12">
-                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                                </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Vezeteknev, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                @Html.TextBoxFor(m => m.Vezeteknev, new { @class = "form-control" })
                             </div>
                         </div>
 
-
-                        <div class="col">
-
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Keresztnev, new { @class = "col-md-12 control-label" })
-                                <div class="col-md-12">
-                                    @Html.TextBoxFor(m => m.Keresztnev, new { @class = "form-control" })
-                                </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                             </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Datum, new { @class = "col-md-12 control-label" })
-                                <div class="col-md-12">
-                                    <input class="form-control" type="date" value="DateTime.Now" id="Datum" name="Datum">
-                                </div>
-                                @Html.ValidationSummary("", new { @class = "text-danger" })
-                            </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-12 control-label" })
-                                <div class="col-md-12">
-                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                             </div>
                         </div>
                     </div>
 
-                    <br />
-                    <div class="form-group">
-                        <div class="col-md-offset-12 col-md-12 text-center">
-                            <input type="submit" class="btn btn-outline-secondary btn-lg" value="Regisztrálok" />
+
+                    <div class="col">
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Keresztnev, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                @Html.TextBoxFor(m => m.Keresztnev, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Datum, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                <input class="form-control" type="date" value="DateTime.Now" id="Datum" name="Datum">
+                            </div>
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
                         </div>
                     </div>
-                }
+                </div>
 
-            </div>
+                <br />
+                <br />
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-12 col-md-12 text-center">
+                        <div class="wrapper">
+                            <div class="link_wrapper">
+                                <input type="submit" value="Regisztrálok" class="aa" />
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                                        <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+
         </div>
-        </div>
-        
+    </div>
+</div>
 
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

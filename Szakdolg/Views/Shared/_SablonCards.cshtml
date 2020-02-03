@@ -1,24 +1,21 @@
 ﻿@model Szakdolg.Models.Sablonok
 
-<div class="col-sm-4">
-    <div class="card mb-3" style="min-width: 540px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="~/Content/Img/@(Model.Img)" class="card-img" alt="...">
+    <div class="col-md-4">
+        <div class="cardSablon">
+            <div class="image">
+                <img src="~/Content/Img/@(Model.Img)" alt="@Model.Megnevezes" />
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">@Model.Megnevezes</h5>
-
-                    <p class="card-text" style="float:right;display:block">Ára: @Model.Ar ft</p>
+            <div class="details">
+                <div class="center">
+                    <h1>@Model.Megnevezes</h1>
+                    <p>@Model.Ar FT</p>
                     @if (User.IsInRole("Admin"))
                     {
                         <br />
-                        <span>@Html.ActionLink("Módosítás", "Modositas", "Sablon", new { id = Model.Id }, new { @class = "btn btn-outline-dark" })</span>
-                        <span onclick="return confirm('Törlöd?')">@Html.ActionLink("Törlés", "Delete", "Sablon", new { id = Model.Id }, new { @class = "btn btn-outline-danger" })</span>
+                        <span>@Html.ActionLink("Módositás", "Modositas", "Sablon", new { id = Model.Id }, new { @class = "btn btn-outline-dark" })</span>
+                        <span onclick="return confirm('Törlöd?')">@Html.ActionLink("Törlés", "Delete", "Munka", new { id = Model.Id }, new { @class = "btn btn-outline-danger" })</span>
                     }
                 </div>
             </div>
         </div>
     </div>
-</div>
