@@ -77,6 +77,38 @@ header.masthead {
     background-color: #262626;
     color: #D9D9D9;
 }
+/*ertesites*/
+.badge-notification {
+    position: relative;
+    margin-right: 10px;
+}
+
+    .badge-notification[data-badge]::after {
+        content: attr(data-badge);
+        position: absolute;
+        top: 0px;
+        right: -10px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 22px;
+        height: 22px;
+        line-height: 22px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 50%;
+        background: #A60311;
+        color: #262626;
+    }
+
+span.badge-notification {
+    margin-right: 24px;
+}
+
+    span.badge-notification[data-badge]::after {
+        top: -11px;
+        right: -24px;
+    }
 
 /*sablonkartya*/
 
@@ -253,3 +285,208 @@ a:hover {
         border: 3px solid #A60311;
         right: -25%;
     }
+
+
+
+/*navbar*/
+
+
+
+.underline {
+    color: #A0A0A0;
+    display: inline-block;
+    position: relative;
+}
+
+    .underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #A60311;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0%;
+    }
+
+    .underline:hover:after {
+        width: 100%;
+        left: 0;
+        
+    }
+
+.Opened {
+    color: #A60311;
+    
+   
+}
+
+
+
+/*sendbutton*/
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #262626;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+    .glow-on-hover:before {
+        content: '';
+        color: #800700;
+        background: linear-gradient(45deg, #FF0E00, #BF0B00, #E60711, #800700, #E60D00, #96050B, #910800, #E60711, #FF0E00);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+        color: #262626;
+    }
+
+        .glow-on-hover:active:after {
+
+            background: transparent;          
+        }
+
+    .glow-on-hover:hover:before {
+        opacity: 1;
+    }
+
+    .glow-on-hover:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #1a1a1a;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+
+    }
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+/*textbox*/
+
+:focus {
+    outline: none;
+}
+
+
+input[type="text"] {
+    font: 15px/24px 'Muli', sans-serif;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+:focus {
+    outline: none;
+}
+
+
+
+input[type="text"] {
+    background: rgba(0, 0, 0, 0);
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: #A0A0A0;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+
+input[type="password"] {
+    font: 15px/24px 'Muli', sans-serif;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+
+input[type="password"] {
+    background: rgba(0, 0, 0, 0);
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: #A0A0A0;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+:focus {
+    outline: none;
+}
+
+
+.effect-2 {
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+    .effect-2 ~ .focus-border {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #A60311;
+        transition: 0.4s;
+    }
+
+    .effect-2:focus ~ .focus-border {
+        width: 88.1%;
+        transition: 0.4s; 
+        left:15px;
+    }
+
+input[type="email"] {
+    background: rgba(0, 0, 0, 0);
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: #A0A0A0;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+input[type="email"] {
+    font: 15px/24px 'Muli', sans-serif;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}

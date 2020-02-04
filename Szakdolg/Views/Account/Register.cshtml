@@ -25,37 +25,57 @@
                 <div class="form-row">
                     <div class="col">
 
+
                         <div class="form-group">
-                            @Html.LabelFor(m => m.Vezeteknev, new { @class = "col-md-12 control-label" })
                             <div class="col-md-12">
-                                @Html.TextBoxFor(m => m.Vezeteknev, new { @class = "form-control" })
+
+                                <input name="Vezeteknev" class="effect-2" type="text" placeholder="Vezetéknév">
+                                <span class="focus-border"></span>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+
+                                <input name="Keresztnev" class="effect-2" type="text" placeholder="Keresztnév" id="Keresztnev">
+                                <span class="focus-border"></span>
+
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(m => m.Email, new { @class = "col-md-12 control-label" })
                             <div class="col-md-12">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+                                <input name="Email" class="effect-2" type="email" placeholder="Email">
+                                <span class="focus-border"></span>
+
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.Password, new { @class = "col-md-12 control-label" })
-                            <div class="col-md-12">
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            </div>
-                        </div>
                     </div>
-
 
                     <div class="col">
 
                         <div class="form-group">
-                            @Html.LabelFor(m => m.Keresztnev, new { @class = "col-md-12 control-label" })
                             <div class="col-md-12">
-                                @Html.TextBoxFor(m => m.Keresztnev, new { @class = "form-control" })
+
+                                <input name="Password" class="effect-2" type="password" placeholder="Jelszó">
+                                <span class="focus-border"></span>
+
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+
+                                <input name="ConfirmPassword" class="effect-2" type="password" placeholder="Jelszó újra">
+                                <span class="focus-border"></span>
+
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             @Html.LabelFor(m => m.Datum, new { @class = "col-md-12 control-label" })
                             <div class="col-md-12">
@@ -63,18 +83,16 @@
                             </div>
                             @Html.ValidationSummary("", new { @class = "text-danger" })
                         </div>
-                        <div class="form-group">
-                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-12 control-label" })
-                            <div class="col-md-12">
-                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                            </div>
-                        </div>
+
+
                     </div>
+                   
+                        
+                    
                 </div>
 
                 <br />
                 <br />
-
 
                 <div class="form-group">
                     <div class="col-md-offset-12 col-md-12 text-center">

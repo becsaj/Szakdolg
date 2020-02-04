@@ -1,34 +1,46 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark ">
+﻿@{
+    var url = Request.Url.ToString();
+    var active = "Opened";
+    var home = "/Home";
+    var munka = "/Munka";
+    var sablon = "/Sablon";
+    var feedback = "/FeedBack";
+    var konzul = "/Konzul/Uj";
+    var ujmunka = "/Munka/Uj";
+    var ujsablon = "/Sablon/Uj";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
             aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="Home">Home</a>
+                <a class="nav-link underline  @(url.Contains(home)?active:"")" href="/Home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Munka">Munkáim</a>
+                <a class="nav-link underline  @(url.Contains(munka)?active:"")" href="/Munka">Munkáim</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Sablon">Sablonok</a>
+                <a class="nav-link underline  @(url.Contains(sablon)?active:"")" href="/Sablon">Sablonok</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/FeedBack">Visszajelzések</a>
+                <a class="nav-link underline  @(url.Contains(feedback)?active:"")" href="/FeedBack">Visszajelzések</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Konzul/Uj">Konzultáció</a>
+                <a class="nav-link underline  @(url.Contains(konzul)?active:"")" href="/Konzul/Uj">Konzultáció</a>
             </li>
 
             @if (User.IsInRole("Admin"))
             {
                 <li class="nav-item">
-                    <a class="nav-link" href="/Munka/Uj">Új munka</a>
+                    <a class="nav-link underline Opened @(url.Contains(ujmunka)?active:"")" href="/Munka/Uj">Új munka</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Sablon/Uj">Új sablon</a>
+                    <a class="nav-link underline Opened @(url.Contains(ujsablon)?active:"")" href="/Sablon/Uj">Új sablon</a>
                 </li>
             }
         </ul>
