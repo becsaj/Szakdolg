@@ -53,8 +53,8 @@ namespace Szakdolg.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
+                message == ManageMessageId.ChangePasswordSuccess ? "Megváltoztattad jelszavad."
+                : message == ManageMessageId.SetPasswordSuccess ? "Jelszavad beállítva."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
@@ -121,7 +121,7 @@ namespace Szakdolg.Controllers
                 var message = new IdentityMessage
                 {
                     Destination = model.Number,
-                    Body = "Your security code is: " + code
+                    Body = "A te BIZTONSÁGI kódod: " + code
                 };
                 await UserManager.SmsService.SendAsync(message);
             }
@@ -238,7 +238,11 @@ namespace Szakdolg.Controllers
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
-            AddErrors(result);
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Hibás jelszó!");
+            }
+
             return View(model);
         }
 
