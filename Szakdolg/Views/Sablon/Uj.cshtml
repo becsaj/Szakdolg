@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Új sablon</h2>
+@*<h2>Új sablon</h2>
 <br />
 
 @using (Html.BeginForm("UjMentes", "Sablon", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Sablonok.Ar)
-        @Html.TextBoxFor(m => m.Sablonok.Ar, new { @class = "form-control"})
+        @Html.TextBoxFor(m => m.Sablonok.Ar, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Sablonok.Ar)
     </div>
 
@@ -33,7 +33,61 @@
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-outline-success">Feltöltés</button>
 }
-<span>@ViewBag.UploadError </span>
+<span>@ViewBag.UploadError </span>*@
+
+
+
+
+
+
+<div class="row justify-content-center align-items-center">
+    <div class="card">
+        <div class="col-md-offset-12 col-md-12 text-center">
+            <br />
+            <h1 class="home-title">
+                <span>Sablon feltöltése</span>
+            </h1>
+        </div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("UjMentes", "Sablon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    <div class="col-md-12">
+
+                        <input name="Sablonok.Megnevezes" class="effect-2" type="text" id="Sablonok_Megnevezes" placeholder="Sablon neve:">
+                        <span class="focus-border"></span><br />
+
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="form-group">
+                    <div class="col-md-12">
+
+                        <input name="Sablonok.Ar" class="effect-2" type="text" id="Sablonok_Ar" placeholder="Sablon ára: (ft)">
+                        <span class="focus-border"></span><br />
+
+                    </div>
+                </div>
+                <br />
+                if (Request.Url.ToString().Contains("/Uj"))
+                {
+                    <div class="form-group style="margin-left:60px;"">
+
+                        <input type="file" name="postedFile" />
+                    </div>
+                }
+
+                <br />
+                @Html.HiddenFor(m => m.Sablonok.Id)
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btnsend btnsend-2" style="margin-left:50px;">Feltöltés</button>
+            }
+        </div>
+    </div>
+</div>
 
 @section scripts
 {

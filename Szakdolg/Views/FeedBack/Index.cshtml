@@ -3,15 +3,31 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br />
-<h2 class="text-center">Visszajelzések munkásságomról.</h2>
-<a href="FeedBack/Uj" class="btn_contact" style="width:100%"><span>Itt tudsz értékelni!</span></a>
-<div class="container-fluid">
-    <div class="row">
-        @foreach (var f in Model)
-        {
-            @Html.Partial("_FeedBack", f)
-        }
 
-    </div>
+<br />
+<div class="col-md-offset-12 col-md-12 text-center">
+    <h1 class="home-title">
+        <span>Visszajelzések munkásságomról.</span>
+    </h1>
 </div>
+<br />
+    <div class="container-fluid">
+        <div class="row">
+            
+            @foreach (var f in Model)
+            {
+                @Html.Partial("_FeedBack", f)
+            }
+
+        </div>
+    </div>
+<br />
+<br />
+<br />
+<br />
+    <div class="col-md-offset-12 col-md-12 text-center">
+        <a href="FeedBack/Uj">
+            <button type="submit" class="btnertek btnertek-2">Értékelj!</button>
+        </a>
+    </div>
+

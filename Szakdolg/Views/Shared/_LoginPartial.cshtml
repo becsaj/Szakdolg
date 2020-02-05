@@ -19,7 +19,7 @@
         }
 
         <li>
-            @Html.ActionLink("Üdv: " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link underline" })
+            @Html.ActionLink("Üdv: " + User.Identity.GetUserName() + "!", "Index", "Manage/ChangePassword", routeValues: null, htmlAttributes: new { title = "/Manage/ChangePassword", @class = "nav-link underline" })
         </li>
 
         <li><a class="nav-link underline" href="javascript:document.getElementById('logoutForm').submit()">Kijelentkezés</a></li>

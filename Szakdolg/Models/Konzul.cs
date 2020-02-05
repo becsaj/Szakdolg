@@ -10,11 +10,15 @@ namespace Szakdolg.Models
     {
         public int? Id { get; set; }
         [Display(Name = "Neve:")]
+        [Required]
         public string Nev { get; set; }
         [Display(Name = "E-mail:")]
+        [Required]
         public string Ecim { get; set; }
         [Display(Name = "Konzultációs szöveg:")]
+        [Required]
         public string Szoveg { get; set; }
+        
         public DateTime Datum { get; set; }
         public bool Lattamozott { get; set; }
         public bool Valasz { get; set; }

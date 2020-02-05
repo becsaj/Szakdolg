@@ -1,66 +1,63 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
- 
 
-    <div class="row">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <div class="row">
-            <div class="col-md-2">
-                <div class="kep">
-                    <img src="/Content/Img/arni.png" class="img-circle" width="300" height="300">
+
+<div class="sample-header">
+    <div class="sample-header-section text-center">
+
+
+    </div>
+</div>
+<div class="sample-section-wrap">
+    <div class="sample-section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+
+                <img src="~/Content/Img/prof.png " class=" rounded-circle" alt="Cinque Terre" width="304" height="236">
                 </div>
             </div>
-            <div class="col-md-8">
-                <h1>Dudás Arnold</h1>
+            <br />
+            <h4>
+                Dudás Arnold
+            </h4>
+            <p>
+                A rajzolás iránti vágy egész eddigi életemben meghatározó volt.
+            </p>
 
-                <h2>Szia!</h2>
 
-                <p>
-                    valami valamivalamivala mivalamivalamivala mivalamiv alamivalamivalamivala mivalamivala mivalamival amival amivalamiv alamivalamival
-                    amival amivalamiva lamivalamivalam i valamivala mivalamivalami valamivalamival amivalamival amivalamivalamivalami valamivvalamiv
-                    valamival amivalamiv alamivalamiva lamivalamival
-            </div>
+
+
         </div>
-
-        <br />
-        <br />
-
-        <div class="col-md-1">
-            <div class="container">
-                <img src="/Content/Img/home.png" width="30" height="30">
-            </div>
-            <address>
-                Heves, Kál<br />
-            </address>
-        </div>
-
-        <div class="col-md-1">
-            <div class="container">
-                <img src="/Content/Img/tel.png" width="20" height="30">
-            </div>
-            <address>
-                +3630683144<br />
-            </address>
-        </div>
-
-        <div class="col-md-1">
-            <div class="container">
-                <img src="/Content/Img/mail.png" width="30" height="20">
-            </div>
-            <address>
-                arnie@gmail.com<br />
-            </address>
-        </div>
+</div>
 
 
-        <br />
-        <br />
-    </div>
-    <div class="col-md-2">
-        <p><a href="https://www.facebook.com/arnie.dudas" class="btn btn-primary btn-lg">Facebook &raquo;</a></p>
-    </div>
-    <div class="col-md-2">
-        <p><a href="https://www.instagram.com/fallen.tear/" class="btn btn-primary btn-lg">Instagram &raquo;</a></p>
-    </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    function parallax_height() {
+        var scroll_top = $(this).scrollTop();
+        var sample_section_top = $(".sample-section").offset().top;
+        var header_height = $(".sample-header-section").outerHeight();
+        $(".sample-section").css({ "margin-top": header_height });
+        $(".sample-header").css({ height: header_height - scroll_top });
+    }
+    parallax_height();
+    $(window).scroll(function () {
+        parallax_height();
+    });
+    $(window).resize(function () {
+        parallax_height();
+    });
+</script>
 

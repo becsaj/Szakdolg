@@ -3,16 +3,16 @@
 {
     <div class="col-md-auto">
         <div class="card" style="width:auto;height:auto;margin-top:20px;">
-            <div class="card-header" style="font-weight:bold;font-style:italic;background: linear-gradient(to right, #696969, #DCDCDC);">
+            <div class="card-header" style="font-weight: bold;font-style: italic;background: linear-gradient(45deg, #D90416, #8C030E, #A60303, #A60303, #8C030E, #D90416);color: white;">
                 <h4 style="font-weight: bold; ">@Model.Nev</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body cardborder">
                 <blockquote class="blockquote mb-0">
                     <p>@Model.Velemeny</p>
                     <footer class="blockquote-footer">@Model.Datum.ToShortDateString() </footer>
                     @if (User.IsInRole("Admin"))
                     {
-                        <span onclick="return confirm('Törlöd?')" style="float:right;">@Html.ActionLink("Torles", "Torles", "FeedBack", new { id = Model.Id }, new { @class = "btn btn-outline-danger" })</span>
+                        <span onclick="return confirm('Törlöd?')" style="float:right;">@Html.ActionLink("Törlés", "Torles", "FeedBack", new { id = Model.Id }, new { @class = "btn btn-outline-danger" })</span>
                     }
                 </blockquote>
             </div>

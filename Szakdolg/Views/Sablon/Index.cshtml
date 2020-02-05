@@ -5,10 +5,17 @@
 }
 <br />
 
-<div class="row h-100 justify-content-center align-items-center"> 
-        @foreach (var f in Model)
-        {
-            @Html.Partial("_SablonCards", f)
-        }
-     
+<div class="col-md-offset-12 col-md-12 text-center">
+    <h1 class="home-title">
+        <span>SABLONOK</span>
+    </h1>
+</div>
+<br />
+<br />
+<div class="row h-100 justify-content-center align-items-center">
+    @foreach (var f in Model)
+    {
+        @Html.Partial("_SablonCards", f)
+    }
+
 </div>

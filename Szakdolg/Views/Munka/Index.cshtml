@@ -5,12 +5,16 @@
 }
 <br />
 
-    
-        <div class="row">
-            @foreach (var f in Model)
-            {
-                @Html.Partial("_MunkaCards", f)
-            }
+<div class="col-md-offset-12 col-md-12 text-center">
+    <h1 class="home-title">
+        <span>MUNKÁIM</span>
+    </h1>
+</div>
+<div class="row">
+    @foreach (var f in Model)
+    {
+        @Html.Partial("_MunkaCards", f)
+    }
 
-        </div>
-   
+</div>
+

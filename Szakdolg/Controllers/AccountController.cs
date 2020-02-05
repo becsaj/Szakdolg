@@ -23,7 +23,7 @@ namespace Szakdolg.Controllers
         {
             
         }
-
+        
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
@@ -88,7 +88,7 @@ namespace Szakdolg.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Hibás Email vagy Jelszó!");
                     return View(model);
             }
         }

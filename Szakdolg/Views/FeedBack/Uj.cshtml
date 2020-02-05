@@ -4,23 +4,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Új visszajelzés</h2>
 
-@using (Html.BeginForm("Mentes", "FeedBack", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+<div class="row justify-content-center align-items-center">
+    <div class="card">
+        <div class="col-md-offset-12 col-md-12 text-center">
+            <br />
+            <h1 class="home-title">
+                <span>Értékelj!</span>
+            </h1>
+        </div>
+        <div class="card-body">
+
+            @using (Html.BeginForm("Mentes", "FeedBack", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    <div class="col-md-12">
+
+                        <input name="FeedBack.Nev" class="effect-2" type="text" id="FeedBack_Nev" placeholder="Név (nem kötelező)">
+                        <span class="focus-border"></span><br />
+
+                    </div>
+                </div>
+
+
+                <div class="form-group ">
+
+                    <label for="FeedBack_Velemeny" style="margin-bottom: 10px; margin-left:15px">Vélemeny</label>
+                    <textarea class="form-control" cols="20" id="FeedBack_Velemeny" name="FeedBack.Velemeny" style="height:100px; width:100%; margin-left:5px; "></textarea>
+                    @Html.ValidationMessageFor(m => m.FeedBack.Velemeny)
+                </div>
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <br />
+
+                @Html.HiddenFor(m => m.FeedBack.Id)
+                @Html.AntiForgeryToken()
+
+                <button type="submit" class="btnsend btnsend-2" style="margin-left:32px;">Küldés</button>
+            }
+        </div>
+
+    </div>
+</div>
+
+@section scripts
 {
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.FeedBack.Nev)
-        @Html.TextBoxFor(m => m.FeedBack.Nev, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.FeedBack.Nev)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.FeedBack.Velemeny)
-        @Html.TextAreaFor(m => m.FeedBack.Velemeny, new { @class = "form-control", @rows = "5" })
-        @Html.ValidationMessageFor(m => m.FeedBack.Velemeny)
-    </div>
-    @Html.HiddenFor(m => m.FeedBack.Id)
-    @Html.AntiForgeryToken()
-    <button type="submit" class="btn btn-outline-dark">Küldés</button>
+    @Scripts.Render("~/bundles/jqueryval")
 }

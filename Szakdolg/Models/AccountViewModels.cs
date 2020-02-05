@@ -56,7 +56,7 @@ namespace Szakdolg.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Jelszó")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
@@ -66,11 +66,11 @@ namespace Szakdolg.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Vezetéknév:")]
+        [Display(Name = "Vezetéknév")]
         public string Vezeteknev { get; set; }
 
         [Required]
-        [Display(Name = "Keresztnév:")]
+        [Display(Name = "Keresztnév")]
         public string Keresztnev { get; set; }
 
         [Required]
@@ -86,7 +86,7 @@ namespace Szakdolg.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Jelszó:")]
+        [Display(Name = "Jelszó")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]

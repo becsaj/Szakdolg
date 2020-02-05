@@ -4,37 +4,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Új munka</h2>
-<br />
 
-@using (Html.BeginForm("UjMentes", "Munka", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Munkaim.Nev)
-        @Html.TextBoxFor(m => m.Munkaim.Nev, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Munkaim.Nev)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Munkaim.Elkeszult)
-        @Html.TextBoxFor(m => m.Munkaim.Elkeszult, "{0:yyyy-MM-dd}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Munkaim.Elkeszult)
-    </div>
-    if (Request.Url.ToString().Contains("/Uj"))
-    {
-        <div class="form-group">
-
-            <input type="file" name="postedFile" />
+<div class="row justify-content-center align-items-center">
+    <div class="card">
+        <div class="col-md-offset-12 col-md-12 text-center">
+            <br />
+            <h1 class="home-title">
+                <span>Munka feltölése</span>
+            </h1>
         </div>
-    }
-    @Html.HiddenFor(m => m.Munkaim.Id)
-    @Html.AntiForgeryToken()
+        <div class="card-body">
 
-    <button type="submit" class="btn btn-outline-success">Feltöltés</button>
-}
-<span>@ViewBag.UploadError </span>
+            @using (Html.BeginForm("UjMentes", "Munka", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    <div class="col-md-12">
 
+                        <input name="Munkaim.Nev" class="effect-2" type="text" id="Munkaim_Nev" placeholder="Munka megnevezése:">
+                        <span class="focus-border"></span><br />
+
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+
+                    <div class="col-md-12">
+                        <input class="form-control" type="date" value="DateTime.Now" id="Munkaim_Elkeszult" name="Munkaim.Elkeszult">
+                    </div>
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                </div>
+                <br />
+                if (Request.Url.ToString().Contains("/Uj"))
+                {
+                    <div class="form-group" style="margin-left:60px;">
+
+                        <input type="file" name="postedFile" />
+                    </div>
+                }
+
+                @Html.HiddenFor(m => m.Munkaim.Id)
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btnsend btnsend-2" style="margin-left:60px;">Feltöltés</button>
+            }
+        </div>
+    </div>
+</div>
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
