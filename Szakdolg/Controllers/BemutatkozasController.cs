@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Szakdolg.Controllers
 {
+    [AllowAnonymous]
     public class BemutatkozasController : Controller
     {
         

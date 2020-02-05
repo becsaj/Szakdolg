@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
 
-            @using (Html.BeginForm("Mentes", "Konzul", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            @using (Html.BeginForm("Mentes", "Konzul", FormMethod.Post))
             {
                 <div class="form-group">
                     <div class="col-md-12">
@@ -38,7 +38,7 @@
                 <div class="form-group ">
 
                     <label for="FeedBack_Velemeny" style="margin-bottom: 10px; margin-left:15px">Szöveg:</label>
-                    <textarea class="form-control" cols="20" id="Konzul_Szoveg" name="FeedBack.Szoveg" style="height:100px; width:100%; margin-left:5px; "></textarea>
+                    <textarea class="form-control" cols="20" id="Konzul_Szoveg" name="Konzul.Szoveg" style="height:100px; width:100%; margin-left:5px; "></textarea>
                     @Html.ValidationMessageFor(m => m.Konzul.Szoveg)
                 </div>
                 @Html.ValidationSummary("", new { @class = "text-danger" })

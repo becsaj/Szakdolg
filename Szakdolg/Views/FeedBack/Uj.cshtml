@@ -34,7 +34,7 @@
                     <textarea class="form-control" cols="20" id="FeedBack_Velemeny" name="FeedBack.Velemeny" style="height:100px; width:100%; margin-left:5px; "></textarea>
                     @Html.ValidationMessageFor(m => m.FeedBack.Velemeny)
                 </div>
-                @Html.ValidationSummary("", new { @class = "text-danger" })
+
                 <br />
 
                 @Html.HiddenFor(m => m.FeedBack.Id)

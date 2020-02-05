@@ -439,6 +439,7 @@
     <Content Include="Views\Konzul\Uj.cshtml" />
     <Content Include="Views\Konzul\Index.cshtml" />
     <Content Include="Views\Home\valami.cshtml" />
+    <Content Include="Views\Bemutatkozas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

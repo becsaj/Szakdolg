@@ -91,7 +91,7 @@ namespace Szakdolg.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Jelszó újra:")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "Nem egyezik a két jelszó.")]
         public string ConfirmPassword { get; set; }
 
         
@@ -113,7 +113,7 @@ namespace Szakdolg.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "Nem egyezik a két jelszó.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
