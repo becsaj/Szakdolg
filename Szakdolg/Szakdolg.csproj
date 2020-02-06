@@ -258,7 +258,6 @@
     <Content Include="Content\Img\hatter.jpg" />
     <Content Include="Content\Img\home.png" />
     <Content Include="Content\Img\igen.jpg" />
-    <Content Include="Content\Img\mail.png" />
     <Content Include="Content\Img\notification.png" />
     <Content Include="Content\Img\prof.png" />
     <Content Include="Content\Img\register.png" />
@@ -269,7 +268,6 @@
     <Content Include="Content\Img\tatto2.png" />
     <Content Include="Content\Img\tatto3.png" />
     <Content Include="Content\Img\tatto4.png" />
-    <Content Include="Content\Img\tel.png" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
