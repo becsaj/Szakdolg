@@ -41,9 +41,9 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 2000px) {
   .container {
-    max-width: 1140px;
+    max-width: 2000px
   }
 }
 
@@ -73,9 +73,9 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1140px;
+    width: 2000px;
   }
 }
 
@@ -112,9 +112,9 @@ html {
 }
 
 .col {
-  -ms-flex-preferred-size: 0;
+ 
   flex-basis: 0;
-  -ms-flex-positive: 1;
+
   flex-grow: 1;
   max-width: 100%;
 }
@@ -355,9 +355,9 @@ html {
 
 @media (min-width: 576px) {
   .col-sm {
-    -ms-flex-preferred-size: 0;
+    
     flex-basis: 0;
-    -ms-flex-positive: 1;
+    
     flex-grow: 1;
     max-width: 100%;
   }
@@ -557,9 +557,9 @@ html {
 
 @media (min-width: 768px) {
   .col-md {
-    -ms-flex-preferred-size: 0;
+    
     flex-basis: 0;
-    -ms-flex-positive: 1;
+   
     flex-grow: 1;
     max-width: 100%;
   }
@@ -759,9 +759,9 @@ html {
 
 @media (min-width: 992px) {
   .col-lg {
-    -ms-flex-preferred-size: 0;
+   
     flex-basis: 0;
-    -ms-flex-positive: 1;
+   
     flex-grow: 1;
     max-width: 100%;
   }
@@ -959,11 +959,11 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 2000px) {
   .col-xl {
-    -ms-flex-preferred-size: 0;
+    
     flex-basis: 0;
-    -ms-flex-positive: 1;
+    
     flex-grow: 1;
     max-width: 100%;
   }
@@ -1295,7 +1295,7 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 2000px) {
   .d-xl-none {
     display: none !important;
   }
@@ -1400,22 +1400,21 @@ html {
 }
 
 .flex-grow-0 {
-  -ms-flex-positive: 0 !important;
+ 
   flex-grow: 0 !important;
 }
 
 .flex-grow-1 {
-  -ms-flex-positive: 1 !important;
+  
   flex-grow: 1 !important;
 }
 
 .flex-shrink-0 {
-  -ms-flex-negative: 0 !important;
   flex-shrink: 0 !important;
 }
 
 .flex-shrink-1 {
-  -ms-flex-negative: 1 !important;
+
   flex-shrink: 1 !important;
 }
 
@@ -1563,19 +1562,19 @@ html {
     flex: 1 1 auto !important;
   }
   .flex-sm-grow-0 {
-    -ms-flex-positive: 0 !important;
+    
     flex-grow: 0 !important;
   }
   .flex-sm-grow-1 {
-    -ms-flex-positive: 1 !important;
+    
     flex-grow: 1 !important;
   }
   .flex-sm-shrink-0 {
-    -ms-flex-negative: 0 !important;
+   
     flex-shrink: 0 !important;
   }
   .flex-sm-shrink-1 {
-    -ms-flex-negative: 1 !important;
+    
     flex-shrink: 1 !important;
   }
   .justify-content-sm-start {
@@ -1702,19 +1701,19 @@ html {
     flex: 1 1 auto !important;
   }
   .flex-md-grow-0 {
-    -ms-flex-positive: 0 !important;
+    
     flex-grow: 0 !important;
   }
   .flex-md-grow-1 {
-    -ms-flex-positive: 1 !important;
+    
     flex-grow: 1 !important;
   }
   .flex-md-shrink-0 {
-    -ms-flex-negative: 0 !important;
+    
     flex-shrink: 0 !important;
   }
   .flex-md-shrink-1 {
-    -ms-flex-negative: 1 !important;
+    
     flex-shrink: 1 !important;
   }
   .justify-content-md-start {
@@ -1841,19 +1840,19 @@ html {
     flex: 1 1 auto !important;
   }
   .flex-lg-grow-0 {
-    -ms-flex-positive: 0 !important;
+   
     flex-grow: 0 !important;
   }
   .flex-lg-grow-1 {
-    -ms-flex-positive: 1 !important;
+   
     flex-grow: 1 !important;
   }
   .flex-lg-shrink-0 {
-    -ms-flex-negative: 0 !important;
+    
     flex-shrink: 0 !important;
   }
   .flex-lg-shrink-1 {
-    -ms-flex-negative: 1 !important;
+    
     flex-shrink: 1 !important;
   }
   .justify-content-lg-start {
@@ -1946,7 +1945,7 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 2000px) {
   .flex-xl-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
@@ -1980,19 +1979,19 @@ html {
     flex: 1 1 auto !important;
   }
   .flex-xl-grow-0 {
-    -ms-flex-positive: 0 !important;
+    
     flex-grow: 0 !important;
   }
   .flex-xl-grow-1 {
-    -ms-flex-positive: 1 !important;
+    
     flex-grow: 1 !important;
   }
   .flex-xl-shrink-0 {
-    -ms-flex-negative: 0 !important;
+   
     flex-shrink: 0 !important;
   }
   .flex-xl-shrink-1 {
-    -ms-flex-negative: 1 !important;
+   
     flex-shrink: 1 !important;
   }
   .justify-content-xl-start {
@@ -3552,7 +3551,7 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 2000px) {
   .m-xl-0 {
     margin: 0 !important;
   }

@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
 @using Szakdolg.Controllers
 
+
 @if (Request.IsAuthenticated)
 {
 
@@ -28,8 +29,8 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right ">
         @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class="nav-link" })</li>*@
-        <li>@Html.ActionLink("Bejelentkezés", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link underline" })</li>
+        <li>@Html.ActionLink("Bejelentkezés", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="nav-link underline"} )</li>
     </ul>
 }
