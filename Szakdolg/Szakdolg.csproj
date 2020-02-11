@@ -227,6 +227,10 @@
     <Compile Include="Migrations\202002051901526_bemutat.Designer.cs">
       <DependentUpon>202002051901526_bemutat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002111716440_NameFix.cs" />
+    <Compile Include="Migrations\202002111716440_NameFix.Designer.cs">
+      <DependentUpon>202002111716440_NameFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FeedBack.cs" />
@@ -255,8 +259,8 @@
     <Content Include="Content\Img\avatar.png" />
     <Content Include="Content\Img\calendar.png" />
     <Content Include="Content\Img\home.png" />
-    <Content Include="Content\Img\home2.png" />
-    <Content Include="Content\Img\home3.jpg" />
+    <Content Include="Content\Img\homep.jpg" />
+    <Content Include="Content\Img\homep2.jpg" />
     <Content Include="Content\Img\minta1.png" />
     <Content Include="Content\Img\minta10.png" />
     <Content Include="Content\Img\minta11.png" />
@@ -489,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002051901526_bemutat.resx">
       <DependentUpon>202002051901526_bemutat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111716440_NameFix.resx">
+      <DependentUpon>202002111716440_NameFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

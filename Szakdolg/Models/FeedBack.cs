@@ -11,7 +11,7 @@ namespace Szakdolg.Models
         public int? Id { get; set; }
         [Required]
         public string Nev { get; set; }
-        [Required]
+        
         public string Velemeny { get; set; }
         [Required]
         public DateTime Datum { get; set; }
